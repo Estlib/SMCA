@@ -109,7 +109,40 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Postmaker">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid>
+                    <GroupBox Header="Post Scheduling Data" Margin="10,0,0,626">
+                        <Grid Margin="0,0,677,0">
+                            <GroupBox Header="Where" Margin="0,0,-10,0">
+                                <Grid>
+                                    <CheckBox Content="Twitter" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="BlueSky" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="Threads" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="Reddit" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="Instagram" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="When" Margin="110,0,-234,0">
+                                <Grid Margin="0,0,-2,0">
+                                    <Label Content="Date" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.542"/>
+                                    <DatePicker HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="187"/>
+                                    <Label Content="Time" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.542"/>
+                                    <TextBox HorizontalAlignment="Left" Margin="61,69,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="136" AutomationProperties.HelpText="00:00"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Program settings" Margin="334,0,-672,0">
+                                <Grid HorizontalAlignment="Left" Width="433">
+                                    <CheckBox Content="Notify me when this post goes live with a " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <RadioButton Content="Window" HorizontalAlignment="Left" Margin="257,10,0,0" VerticalAlignment="Top"/>
+                                    <RadioButton Content="or a Balloon" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="Log Posting failures" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="If notification is window, show buttons to go to the posts" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+                                </Grid>
+                            </GroupBox>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="GroupBox" Margin="10,180,10,96"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Calendar">
                 <Grid Background="#FFE5E5E5"/>
