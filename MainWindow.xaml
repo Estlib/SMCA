@@ -114,19 +114,27 @@
                         <Grid Margin="0,0,677,0">
                             <GroupBox Header="Where" Margin="0,0,-10,0">
                                 <Grid>
-                                    <CheckBox Content="Twitter" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                                    <CheckBox Content="BlueSky" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
-                                    <CheckBox Content="Threads" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-                                    <CheckBox Content="Reddit" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-                                    <CheckBox Content="Instagram" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="Twitter" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="BlueSky" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="Threads" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="Reddit" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Content="Instagram" HorizontalAlignment="Center" Margin="0,44,0,0" VerticalAlignment="Top"/>
                                 </Grid>
                             </GroupBox>
                             <GroupBox Header="When" Margin="110,0,-234,0">
                                 <Grid Margin="0,0,-2,0">
-                                    <Label Content="Date" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.542"/>
-                                    <DatePicker HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="187"/>
-                                    <Label Content="Time" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.542"/>
-                                    <TextBox HorizontalAlignment="Left" Margin="61,69,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="136" AutomationProperties.HelpText="00:00"/>
+                                    <Label Content="Date" HorizontalAlignment="Left" Margin="10,-5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,-0.957"/>
+                                    <DatePicker HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
+                                    <Label Content="Time" HorizontalAlignment="Left" Margin="153,-5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.199" Height="26"/>
+                                    <TextBox HorizontalAlignment="Left" Margin="153,17,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
+                                    <DatePicker HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
+                                    <TextBox HorizontalAlignment="Left" Margin="153,38,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
+                                    <DatePicker HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
+                                    <TextBox HorizontalAlignment="Left" Margin="153,59,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
+                                    <DatePicker HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
+                                    <TextBox HorizontalAlignment="Left" Margin="153,80,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
+                                    <DatePicker HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
+                                    <TextBox HorizontalAlignment="Left" Margin="153,101,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
                                 </Grid>
                             </GroupBox>
                             <GroupBox Header="Program settings" Margin="334,0,-672,0">
@@ -141,11 +149,100 @@
 
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="GroupBox" Margin="10,180,10,96"/>
+                    <GroupBox Header="New Post" Margin="10,180,10,49">
+                        <Grid>
+                            <Label Content="Post title:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="110"/>
+                            <TextBox HorizontalAlignment="Left" Margin="125,37,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="555"/>
+                            <Label Content="Post text:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="110"/>
+                            <TextBox HorizontalAlignment="Left" Margin="125,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="627" AcceptsReturn="True" Height="64"/>
+                            <Label Content="Max count" HorizontalAlignment="Left" Margin="680,33,0,0" VerticalAlignment="Top" Width="67"/>
+                            <Label Content="Media Files:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top"/>
+                            <Border x:Name="MediaDropArea"
+                            BorderThickness="1"
+                            BorderBrush="Gray"
+                            CornerRadius="0"
+                            AllowDrop="True"
+                            DragEnter="MediaDropArea_DragEnter"
+                            Drop="MediaDropArea_Drop" Margin="125,129,10,323">
+
+                                <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+                                    <TextBlock Text="Drag media here"
+                       HorizontalAlignment="Center"/>
+
+                                    <TextBlock Text="or click Browse"
+                       HorizontalAlignment="Center"
+                       Foreground="Gray"/>
+
+                                    <Button Content="Browse"
+                    Width="80"
+                    Margin="0,10,0,0"
+                    Click="BrowseMedia_Click"/>
+                                </StackPanel>
+                            </Border>
+                            <Label Content="Max count&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
+                            <Label Content="Post type:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110"/>
+                            <RadioButton Content="New Post" HorizontalAlignment="Left" Margin="125,17,0,0" VerticalAlignment="Top"/>
+                            <RadioButton Content="Repost old (without new content)" HorizontalAlignment="Left" Margin="199,17,0,0" VerticalAlignment="Top"/>
+                            <RadioButton Content="Quote-repost / Crosspost" HorizontalAlignment="Left" Margin="399,17,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+                            <Label Content="Content labeling" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top"/>
+                            <CheckBox Content="Is it NSFW" HorizontalAlignment="Left" Margin="125,231,0,0" VerticalAlignment="Top"/>
+                            <CheckBox Content="Does it have spoilers" HorizontalAlignment="Left" Margin="204,231,0,0" VerticalAlignment="Top"/>
+                            <CheckBox Content="Is it containing AI generated content" HorizontalAlignment="Left" Margin="338,231,0,0" VerticalAlignment="Top"/>
+                            <CheckBox Content="Is the content original creation" HorizontalAlignment="Left" Margin="556,231,0,0" VerticalAlignment="Top" Width="196"/>
+                            <CheckBox Content="Is it sponsored content" HorizontalAlignment="Left" Margin="125,251,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Collaborators:" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Width="110"/>
+                            <TextBox HorizontalAlignment="Left" Margin="125,271,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="263"/>
+                            <Label Content="Location:" HorizontalAlignment="Left" Margin="393,267,0,0" VerticalAlignment="Top" Width="85"/>
+                            <TextBox HorizontalAlignment="Left" Margin="483,271,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="269"/>
+                        </Grid>
+                    </GroupBox>
+                    <Button Content="Schedule posts" HorizontalAlignment="Left" Height="34" Margin="680,757,0,0" VerticalAlignment="Top" Width="104"/>
+                    <Button Content="Save as draft" HorizontalAlignment="Left" Height="34" Margin="571,757,0,0" VerticalAlignment="Top" Width="104"/>
+                    <Button Content="Load from file" HorizontalAlignment="Left" Height="34" Margin="10,757,0,0" VerticalAlignment="Top" Width="104"/>
+                    <Button Content="Post now" HorizontalAlignment="Left" Height="34" Margin="462,757,0,0" VerticalAlignment="Top" Width="104"/>
+                    <Button Content="Load a prefab" HorizontalAlignment="Left" Height="34" Margin="119,757,0,0" VerticalAlignment="Top" Width="104"/>
+                    <Button Content="Save to file" HorizontalAlignment="Left" Height="34" Margin="228,757,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click"/>
+                    <Button Content="Save as prefab" HorizontalAlignment="Left" Height="34" Margin="337,757,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Calendar">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid>
+                        <Calendar HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="164"/>
+                    </Grid>
+                    <GroupBox Header="This week" Margin="198,10,0,0"/>
+                    <GroupBox Header="Selected Entry" Height="615" VerticalAlignment="Top" Margin="0,186,0,0" HorizontalAlignment="Left" Width="193">
+                        <Grid>
+                            <GroupBox Header="Quick info" Margin="0,0,0,262">
+                                <Grid>
+                                    <Label Content="Goes live at" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <TextBox HorizontalAlignment="Left" Margin="76,4,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="83"/>
+                                    <Label Content="On following platforms:" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="169"/>
+                                </Grid>
+                                <TextBox HorizontalAlignment="Center" Margin="0,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="65"/>
+                                <Label Content="Post content:" HorizontalAlignment="Left" Margin="0,122,0,0" VerticalAlignment="Top"/>
+                                <TextBox HorizontalAlignment="Center" Margin="0,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="103"/>
+                                <Label
+                                    Content="Post type:" HorizontalAlignment="Center" Width="169" VerticalAlignment="Top" Margin="0,256,0,0"/>
+                                <TextBox HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="17"/>
+                            </GroupBox>
+                            <GroupBox Header="Quick Actions" Margin="0,335,0,0">
+                                <Grid>
+                                    <Button Content="Disschedule as Draft" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="149"/>
+                                    <Button Content="Edit in Postmaker" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" Width="149"/>
+                                    <Button Content="Delay one day" HorizontalAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" Width="149"/>
+                                    <Button Content="Remove platforms" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Width="149"/>
+                                    <Button Content="Set new time" HorizontalAlignment="Center" Margin="0,85,0,0" VerticalAlignment="Top" Width="149" Click="Button_Click_1"/>
+                                    <Button Content="Delete scheduling" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Width="149"/>
+                                    <Button Content="Post again as new" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" Width="149"/>
+                                    <Button Content="Post again as new" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" Width="149"/>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
             </TabItem>
             <TabItem Header="Posts Scheduled">
                 <Grid Background="#FFE5E5E5"/>

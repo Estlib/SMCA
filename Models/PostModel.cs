@@ -196,25 +196,25 @@ namespace SMCA.Models
         /// </summary>
         public string? Audience { get; set; }
 
-        /// <summary>
-        /// When the application should publish the post.
-        /// Application property (not sent directly to platform APIs).
-        /// Used by: All platforms
-        /// </summary>
-        public DateTime? ScheduledPublish { get; set; }
+        ///// <summary>
+        ///// When the application should publish the post.
+        ///// Application property (not sent directly to platform APIs).
+        ///// Used by: All platforms
+        ///// </summary>
+        //public DateTime? ScheduledPublish { get; set; }
 
-        /// <summary>
-        /// Indicates the post is still a draft.
-        /// Application property.
-        /// Used by: All platforms
-        /// </summary>
-        public bool IsDraft { get; set; }
+        ///// <summary>
+        ///// Indicates the post is still a draft.
+        ///// Application property.
+        ///// Used by: All platforms
+        ///// </summary>
+        //public bool IsDraft { get; set; }
 
-        /// <summary>
-        /// Platform-specific overrides for any property (e.g. different text per platform).
-        /// Application property.
-        /// Used by: All platforms
-        /// </summary>
-        public Dictionary<SocialPlatform, PlatformOverride> PlatformOverrides { get; set; } = new();
+        ///// <summary>
+        ///// Platform-specific overrides for any property (e.g. different text per platform).
+        ///// Application property.
+        ///// Used by: All platforms
+        ///// </summary>
+        //public Dictionary<SocialPlatform, PlatformOverride> PlatformOverrides { get; set; } = new();
     }
 }

@@ -14,7 +14,9 @@ namespace SMCA.Models
         public string PostErrorsIDs { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
-        public DateTime PublishThisAt { get; set; }
+        public List<DateTime>? PublishThisAt { get; set; }
         public List<Platform>? PublishOnPlatforms { get; set; }
+        public bool IsDraft { get; set; }
+
     }
 }
