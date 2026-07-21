@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace SMCA.Models
     public class PostModel
     {
         //this class is 100% clanket code
+        [Key]
         public Guid ID { get; set; }
         /// <summary>
         /// Main body of the post.

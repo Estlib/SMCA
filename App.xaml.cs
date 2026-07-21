@@ -1,4 +1,6 @@
-﻿using System.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using SMCA.Database;
+using System.Configuration;
 using System.Data;
 using System.Windows;
 
@@ -9,6 +11,25 @@ namespace SMCA
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            try
+            {
+                using DBConfiguration database = new DBConfiguration();
+
+                database.Database.EnsureCreated();
+            }
+            catch (Exception ex)
+            {
+                string message = $"Cannot create DB, see exact error below:\n\n{ex.Message}";
+                string title = "Error";
+                var result = MessageBox.Show(message, title, MessageBoxButton.OK);
+            }
+
+
+        }
     }
 
 }

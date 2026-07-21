@@ -10,10 +10,9 @@
         Title="MainWindow" Icon="/SMCA.PNG">
     <Grid Width="800" Height="900">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="131*"/>
-            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TabControl Margin="0,0,0,71" Grid.ColumnSpan="2">
+        <TabControl Margin="0,0,0,71" SelectionChanged="TabControl_SelectionChanged" AutomationProperties.Name="MainTabs">
             <TabItem Header="Main">
                 <Grid Background="#FFE5E5E5">
                     <GroupBox Header="API Keys" Margin="10,10,402,619">
@@ -218,15 +217,15 @@
                             <GroupBox Header="Quick info" Margin="0,0,0,262">
                                 <Grid>
                                     <Label Content="Goes live at" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                                    <TextBox HorizontalAlignment="Left" Margin="76,4,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="83"/>
+                                    <TextBox HorizontalAlignment="Left" Margin="76,4,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="83" AutomationProperties.HelpText="none selected" IsEnabled="False"/>
                                     <Label Content="On following platforms:" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="169"/>
-                                </Grid>
-                                <TextBox HorizontalAlignment="Center" Margin="0,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="65"/>
-                                <Label Content="Post content:" HorizontalAlignment="Left" Margin="0,122,0,0" VerticalAlignment="Top"/>
-                                <TextBox HorizontalAlignment="Center" Margin="0,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="103"/>
-                                <Label
+                                    <TextBox HorizontalAlignment="Center" Margin="0,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="65" IsEnabled="False"/>
+                                    <Label Content="Post content:" HorizontalAlignment="Left" Margin="0,122,0,0" VerticalAlignment="Top"/>
+                                    <TextBox HorizontalAlignment="Center" Margin="0,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="103" IsEnabled="False"/>
+                                    <Label
                                     Content="Post type:" HorizontalAlignment="Center" Width="169" VerticalAlignment="Top" Margin="0,256,0,0"/>
-                                <TextBox HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="17"/>
+                                    <TextBox HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" Height="17" IsEnabled="False"/>
+                                </Grid>
                             </GroupBox>
                             <GroupBox Header="Quick Actions" Margin="0,335,0,0">
                                 <Grid>
@@ -237,7 +236,8 @@
                                     <Button Content="Set new time" HorizontalAlignment="Center" Margin="0,85,0,0" VerticalAlignment="Top" Width="149" Click="Button_Click_1"/>
                                     <Button Content="Delete scheduling" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Width="149"/>
                                     <Button Content="Post again as new" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" Width="149"/>
-                                    <Button Content="Post again as new" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" Width="149"/>
+                                    <Button Content="Make a platform repost" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" Width="149"/>
+                                    <Button Content="Turn into a prefab" HorizontalAlignment="Center" Margin="0,210,0,0" VerticalAlignment="Top" Width="149"/>
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -248,7 +248,9 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem Header="Posts Automated">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid/>
+                </Grid>
             </TabItem>
             <TabItem Header="Timeline">
                 <Grid Background="#FFE5E5E5"/>
@@ -256,7 +258,7 @@
             <TabItem Header="Settings">
                 <Grid Background="#FFE5E5E5">
                     <Grid>
-                        <GroupBox Header="Program settings" Margin="10,10,10,653">
+                        <GroupBox Header="Program settings" Margin="10,10,10,551">
                             <Grid>
                                 <CheckBox Content="Unset" HorizontalAlignment="Left" Margin="253,10,0,0" VerticalAlignment="Top"/>
                                 <Label Content="Minimize hides window in tray" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="238"/>
@@ -267,10 +269,16 @@
                                 <TextBox HorizontalAlignment="Left" Margin="16,88,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="170"/>
                                 <Button Content="Set" HorizontalAlignment="Left" Margin="191,87,0,0" VerticalAlignment="Top" Width="53"/>
                                 <Button Content="Go To" HorizontalAlignment="Left" Margin="249,87,0,0" VerticalAlignment="Top" Width="53"/>
+                                <CheckBox Content="Unset" HorizontalAlignment="Left" Margin="253,117,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Run program on startup" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Width="238"/>
+                                <CheckBox Content="Unset" HorizontalAlignment="Left" Margin="253,143,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Start ticker when program starts" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top" Width="238"/>
+                                <CheckBox Content="Unset" HorizontalAlignment="Left" Margin="253,169,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Help is displayed locally or online" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Width="238"/>
                             </Grid>
                         </GroupBox>
                     </Grid>
-                    <GroupBox Header="Post automation settings" Margin="10,150,10,430">
+                    <GroupBox Header="Post automation settings" Margin="10,251,10,329">
                         <Grid>
                             <CheckBox Content="Unset" HorizontalAlignment="Left" Margin="253,10,0,0" VerticalAlignment="Top"/>
                             <Label Content="Twitch streams are automatically posted" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="238"/>
@@ -280,21 +288,34 @@
                             <CheckBox Content="Reddit" HorizontalAlignment="Left" Margin="207,37,0,0" VerticalAlignment="Top"/>
                             <CheckBox Content="Instagram" HorizontalAlignment="Left" Margin="65,57,0,0" VerticalAlignment="Top"/>
                             <CheckBox Content="Threads" HorizontalAlignment="Left" Margin="142,57,0,0" VerticalAlignment="Top"/>
+                            <Label Content="If YTA is installed, use YTA as automation source, not YouTube" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="338"/>
+                            <CheckBox Content="Unset" HorizontalAlignment="Left" Margin="348,0,0,0" VerticalAlignment="Center" Checked="CheckBox_Checked"/>
+                            <Label Content="YouTube videos are automatically posted" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="338"/>
+                            <CheckBox VerticalAlignment="Top" Margin="253,117,0,0" HorizontalAlignment="Left" Content="Unset"/>
+                            <Label Width="55" VerticalAlignment="Top" Margin="10,135,0,0" HorizontalAlignment="Left" Content="And to:"/>
+                            <CheckBox VerticalAlignment="Top" Margin="65,140,0,0" HorizontalAlignment="Left" Content="Twitter"/>
+                            <CheckBox VerticalAlignment="Top" Margin="142,140,0,0" HorizontalAlignment="Left" Content="Bluesky"/>
+                            <CheckBox VerticalAlignment="Top" Margin="207,140,0,0" HorizontalAlignment="Left" Content="Reddit"/>
+                            <CheckBox VerticalAlignment="Top" Margin="65,160,0,0" HorizontalAlignment="Left" Content="Instagram"/>
+                            <CheckBox VerticalAlignment="Top" Margin="142,160,0,0" HorizontalAlignment="Left" Content="Threads"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="About/Help">
+            <TabItem Header="About/Help" Tag="" AutomationProperties.Name="About/Help">
                 <Grid Background="#FFE5E5E5">
                     <Grid>
                         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" 
                                    VerticalAlignment="Top" Width="774" Height="68"><Run Text="SCMA - Social Content Management Assistant is an application meant to help the beginner content creator manage all the usual social apps. This app however is &quot;BYOK&quot; - Bring Your Own Key. What this means is that the user needs to register their own developer accounts with the various API providers and get respective authentication credentials from each platform they wish to use"/><Run Language="et-ee" Text=" - just like YTA functions."/><Run Text=" This needs some technical knowhow and is linked somewhere in the docs of this app."/><Run Language="et-ee" Text="  For that please see the readme on github."/></TextBlock>
+                        <GroupBox Header="README.md" Margin="10,83,10,10">
+                            <WebBrowser x:Name="webReadme"/>
+                        </GroupBox>
                     </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Grid HorizontalAlignment="Left" Height="51" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="780" Background="Black" Grid.ColumnSpan="2">
-            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Center" Height="35" Width="35" Margin="10,0,0,0"/>
+        <Grid HorizontalAlignment="Center" Height="51" Margin="0,839,0,0" VerticalAlignment="Top" Width="780" Background="Black">
+            <Button x:Name="btnTickerPlayStop" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Height="35" Width="35" Margin="10,0,0,0" Click="btnTickerPlayStop_Click"/>
         </Grid>
 
     </Grid>
