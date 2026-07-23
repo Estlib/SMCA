@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMCA.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +15,17 @@ namespace SMCA.Controllers
 
         //get-id
 
+        //get-link
+
         //get-filtered
 
         //get-timerange
 
         //create
+        public void Create(Post post)
+        {
+
+        }
 
         //create-postnow
 

@@ -14,7 +14,11 @@ namespace SMCA
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            #if DEBUG
+            Controllers.ConsoleController.Open();
+            #endif
 
+            Console.WriteLine("SMCA starting...");
             try
             {
                 using DBConfiguration database = new DBConfiguration();

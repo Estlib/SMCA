@@ -7,20 +7,19 @@ using System.Threading.Tasks;
 
 namespace SMCA.Models
 {
-    public class Post
+    //use for frontend only
+    class ContaineredPost
     {
         [Key]
         public Guid ID { get; set; }
-        public string PostModelID { get; set; }
-        public string PostSettingID { get; set; }
-        public string PostErrorsIDs { get; set; }
+        public Post PostModel { get; set; }
+        public PostSettings PostSettingsData { get; set; }
+        public PostError? PostErrors { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
         public List<DateTime>? PublishThisAt { get; set; }
         public List<Platform>? PublishOnPlatforms { get; set; }
-        public List<string>? ReturnedPostURLS { get; set; }
-        public bool IsDraft { get; set; }
+        public bool? IsDraft { get; set; }
         public PostType ThisPostIsA { get; set; }
-
     }
 }

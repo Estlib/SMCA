@@ -16,6 +16,7 @@ namespace SMCA.Database
         public DbSet<PostError> PostErrors { get; set; }
         public DbSet<PostModel> PostDatas { get; set; }
         public DbSet<PostSettings> PostSettingses { get; set; }
+        public DbSet<PostLinks> PostLinkses { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

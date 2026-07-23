@@ -109,31 +109,31 @@
             </TabItem>
             <TabItem Header="Postmaker">
                 <Grid>
-                    <GroupBox Header="Post Scheduling Data" Margin="10,0,0,626">
+                    <GroupBox Header="Post Scheduling Data" Margin="10,0,0,592">
                         <Grid Margin="0,0,677,0">
                             <GroupBox Header="Where" Margin="0,0,-10,0">
                                 <Grid>
-                                    <CheckBox Content="Twitter" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top"/>
-                                    <CheckBox Content="BlueSky" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
-                                    <CheckBox Content="Threads" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top"/>
-                                    <CheckBox Content="Reddit" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
-                                    <CheckBox Content="Instagram" HorizontalAlignment="Center" Margin="0,44,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox x:Name="tickXoption" Content="Twitter" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" AutomationProperties.Name="tickXoption"/>
+                                    <CheckBox x:Name="tickBoption" Content="BlueSky" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" AutomationProperties.Name="tickBoption"/>
+                                    <CheckBox x:Name="tickToption" Content="Threads" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" AutomationProperties.Name="tickToption"/>
+                                    <CheckBox x:Name="tickRoption" Content="Reddit" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" AutomationProperties.Name="tickRoption" Checked="tickRoption_Checked" Unchecked="tickRoption_Checked"/>
+                                    <CheckBox x:Name="tickIoption" Content="Instagram" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" AutomationProperties.Name="tickIoption"/>
                                 </Grid>
                             </GroupBox>
                             <GroupBox Header="When" Margin="110,0,-234,0">
                                 <Grid Margin="0,0,-2,0">
-                                    <Label Content="Date" HorizontalAlignment="Left" Margin="10,-5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,-0.957"/>
-                                    <DatePicker HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
-                                    <Label Content="Time" HorizontalAlignment="Left" Margin="153,-5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.199" Height="26"/>
-                                    <TextBox HorizontalAlignment="Left" Margin="153,17,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
-                                    <DatePicker HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
-                                    <TextBox HorizontalAlignment="Left" Margin="153,38,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
-                                    <DatePicker HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
-                                    <TextBox HorizontalAlignment="Left" Margin="153,59,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
-                                    <DatePicker HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
-                                    <TextBox HorizontalAlignment="Left" Margin="153,80,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
-                                    <DatePicker HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="138" Height="21"/>
-                                    <TextBox HorizontalAlignment="Left" Margin="153,101,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="46" AutomationProperties.HelpText="00:00"/>
+                                    <Label Content="Date" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,-0.957"/>
+                                    <DatePicker x:Name="dpickX" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="115" Height="21" AutomationProperties.Name="dateInputX"/>
+                                    <Label Content="Time hh:mm" HorizontalAlignment="Left" Margin="123,2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.199" Height="26"/>
+                                    <TextBox x:Name="tboxTimeX" HorizontalAlignment="Left" Margin="130,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" AutomationProperties.HelpText="00:00" AutomationProperties.Name="timeInput_X" Height="21"/>
+                                    <DatePicker x:Name="dpickI" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="115" Height="21"/>
+                                    <TextBox x:Name="tboxTimeI" HorizontalAlignment="Left" Margin="130,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" AutomationProperties.HelpText="00:00" Height="21"/>
+                                    <DatePicker x:Name="dpickR" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="115" Height="21"/>
+                                    <TextBox x:Name="tboxTimeR" HorizontalAlignment="Left" Margin="130,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" AutomationProperties.HelpText="00:00" Height="21"/>
+                                    <DatePicker x:Name="dpickB" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="115" Height="21"/>
+                                    <TextBox x:Name="tboxTimeB" HorizontalAlignment="Left" Margin="130,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" AutomationProperties.HelpText="00:00" Height="21"/>
+                                    <DatePicker x:Name="dpickT" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="115" Height="21"/>
+                                    <TextBox x:Name="tboxTimeT" HorizontalAlignment="Left" Margin="130,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" AutomationProperties.HelpText="00:00" Height="21"/>
                                 </Grid>
                             </GroupBox>
                             <GroupBox Header="Program settings" Margin="334,0,-672,0">
@@ -148,21 +148,21 @@
 
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="New Post" Margin="10,180,10,49">
+                    <GroupBox Header="New Post" Margin="10,209,10,49">
                         <Grid>
-                            <Label Content="Post title:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="110"/>
-                            <TextBox HorizontalAlignment="Left" Margin="125,37,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="555"/>
-                            <Label Content="Post text:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="110"/>
-                            <TextBox HorizontalAlignment="Left" Margin="125,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="627" AcceptsReturn="True" Height="64"/>
+                            <Label x:Name="labelPostTitle" Content="---" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="110"/>
+                            <TextBox x:Name="tboxTitle_R" HorizontalAlignment="Left" Margin="125,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="555" IsEnabled="False"/>
+                            <Label x:Name="labelPostText" Content="Post text:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="110"/>
+                            <TextBox x:Name="tboxMainBody_XRIBT" HorizontalAlignment="Left" Margin="125,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="627" AcceptsReturn="True" Height="64"/>
                             <Label Content="Max count" HorizontalAlignment="Left" Margin="680,33,0,0" VerticalAlignment="Top" Width="67"/>
-                            <Label Content="Media Files:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Media Files:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top"/>
                             <Border x:Name="MediaDropArea"
                             BorderThickness="1"
                             BorderBrush="Gray"
                             CornerRadius="0"
                             AllowDrop="True"
                             DragEnter="MediaDropArea_DragEnter"
-                            Drop="MediaDropArea_Drop" Margin="125,129,10,323">
+                            Drop="MediaDropArea_Drop" Margin="125,152,10,300">
 
                                 <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center">
@@ -182,22 +182,24 @@
                             </Border>
                             <Label Content="Max count&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
                             <Label Content="Post type:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110"/>
-                            <RadioButton Content="New Post" HorizontalAlignment="Left" Margin="125,17,0,0" VerticalAlignment="Top"/>
-                            <RadioButton Content="Repost old (without new content)" HorizontalAlignment="Left" Margin="199,17,0,0" VerticalAlignment="Top"/>
-                            <RadioButton Content="Quote-repost / Crosspost" HorizontalAlignment="Left" Margin="399,17,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+                            <RadioButton x:Name="rbNewPost" Content="New Post" HorizontalAlignment="Left" Margin="125,17,0,0" VerticalAlignment="Top" Checked="rbNewPost_Checked"/>
+                            <RadioButton x:Name="rbRepost" Content="Repost old (without new content)" HorizontalAlignment="Left" Margin="199,17,0,0" VerticalAlignment="Top" Checked="rbRepost_Checked"/>
+                            <RadioButton x:Name="rbQuote" Content="Quote-repost / Crosspost" HorizontalAlignment="Left" Margin="399,17,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
                             <Label Content="Content labeling" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top"/>
                             <CheckBox Content="Is it NSFW" HorizontalAlignment="Left" Margin="125,231,0,0" VerticalAlignment="Top"/>
                             <CheckBox Content="Does it have spoilers" HorizontalAlignment="Left" Margin="204,231,0,0" VerticalAlignment="Top"/>
                             <CheckBox Content="Is it containing AI generated content" HorizontalAlignment="Left" Margin="338,231,0,0" VerticalAlignment="Top"/>
-                            <CheckBox Content="Is the content original creation" HorizontalAlignment="Left" Margin="556,231,0,0" VerticalAlignment="Top" Width="196"/>
-                            <CheckBox Content="Is it sponsored content" HorizontalAlignment="Left" Margin="125,251,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="tickRoriginalcontent" Content="Is the content original creation" HorizontalAlignment="Left" Margin="556,231,0,0" VerticalAlignment="Top" Width="196"/>
+                            <CheckBox x:Name="tickRspoiler" Content="Is it sponsored content" HorizontalAlignment="Left" Margin="125,251,0,0" VerticalAlignment="Top"/>
                             <Label Content="Collaborators:" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Width="110"/>
                             <TextBox HorizontalAlignment="Left" Margin="125,271,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="263"/>
                             <Label Content="Location:" HorizontalAlignment="Left" Margin="393,267,0,0" VerticalAlignment="Top" Width="85"/>
                             <TextBox HorizontalAlignment="Left" Margin="483,271,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="269"/>
+                            <Label x:Name="labelQuoteLink" Content="Quoted post link:" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="110"/>
+                            <TextBox x:Name="tboxQuoteLink_RXB" HorizontalAlignment="Left" Margin="125,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="555"/>
                         </Grid>
                     </GroupBox>
-                    <Button Content="Schedule posts" HorizontalAlignment="Left" Height="34" Margin="680,757,0,0" VerticalAlignment="Top" Width="104"/>
+                    <Button x:Name="Btn_PM_SchedulePosts" Content="Schedule posts" HorizontalAlignment="Left" Height="34" Margin="680,757,0,0" VerticalAlignment="Top" Width="104" Click="Btn_PM_SchedulePosts_Click"/>
                     <Button Content="Save as draft" HorizontalAlignment="Left" Height="34" Margin="571,757,0,0" VerticalAlignment="Top" Width="104"/>
                     <Button Content="Load from file" HorizontalAlignment="Left" Height="34" Margin="10,757,0,0" VerticalAlignment="Top" Width="104"/>
                     <Button Content="Post now" HorizontalAlignment="Left" Height="34" Margin="462,757,0,0" VerticalAlignment="Top" Width="104"/>
